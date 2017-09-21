@@ -47,6 +47,14 @@ print('price of eggs is: $%10.4f' % 3.1415)
 print('price of eggs is: $%010.4f' % 3.1415)
 print('price of eggs is: $%+10.4f' % -3.1415)
 
+# find 
+title = 'hello world, hello dfkigs'
+# 1.substr
+print(title.find('hello'))
+# 2.substr, start
+print(title.find('hello', 1))
+# 3.substr, start , end
+print(title.find('hello', 1, 3))
 
 
 
