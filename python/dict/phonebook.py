@@ -13,6 +13,9 @@ phonebook = {
 		'number' : '33333333',
 		'email' : 'wangwu@163.com'
 	},
+	'wangwu' : {
+		'number' : '33333333',
+	},
 }
 
 options = {'e':'email','n':'number'}
@@ -22,8 +25,10 @@ option = raw_input('which do you want, email (e) or number (n)?')
 key = options[option]
 
 if (name in phonebook) :
-	print("%s's %s is %s" % (name,key,phonebook[name][key]))
+	result = phonebook[name][key]
+	print("%s's %s is %s" % (name,key,result))
 else :
-	print("%s is not found in phonebook" % name)
+	result = phonebook.get(name,{}).get(key,'not available')
+	print("%s's %s is %s" % (name,key,result))
 
 #print(phonebook)
