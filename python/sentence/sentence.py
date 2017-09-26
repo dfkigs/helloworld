@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # statement block, start with :  
-
+from math import sqrt
 
 # boolean
 # False, None, 0, "", {}, (), []
@@ -82,6 +82,34 @@ while not name:
 	name = raw_input("please input your name:")
 
 print name
+
+
+# pass del  exec
+i = 0
+if i < 0:
+	print 'i < 0'
+elif i > 0:
+	pass
+# without pass , will cause error: IndentationError: expected an indented block
+elif i == 0:
+	print 'i == 0'
+
+x = [1,2,3]
+y = x
+del x
+print y
+
+print eval(raw_input("enter an expression: "))
+
+
+# scope
+scope = {}
+exec "sqrt = 1" in scope
+print sqrt(4)
+#print scope
+
+exec 'x = 2' in scope
+print eval('x*x', scope)
 
 
 
