@@ -1,0 +1,10 @@
+[numbers]
+
+pi : 3.1415926535897932
+
+[messages]
+
+greeting : Welcome to the area of python
+question : please enter the radius:
+result_message : The area is
+

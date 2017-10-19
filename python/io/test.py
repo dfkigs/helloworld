@@ -24,6 +24,7 @@ while True:
 for c in f.read():
 	process(c)
 
+# readlines
 for l in f.readlines():
 	process(l)
 

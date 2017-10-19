@@ -1,0 +1,2 @@
+INFO:root:start programmer
+INFO:root:try to divide 1 by 0
