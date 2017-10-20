@@ -112,3 +112,20 @@ print email[m.start():m.end()]
 print email[:m.start()] + email[m.end():]
 print m.span()
 
+# ******** (8)**************
+# findall & finditer
+# end
+# findall(pattern, string, flags=0)
+# Return all non-overlapping matches of pattern in string, as a list of strings
+m = re.findall("\w+", "this is a dog, that is a dog")
+print m
+# ['this', 'is', 'a', 'dog', 'that', 'is', 'a', 'dog']
+
+# finditer(pattern, string, flags=0)
+# Return an iterator yielding MatchObject instances over all non-overlapping matches for the RE pattern in string
+m = re.finditer("\w+", "this is a dog, that is a dog")
+for obj in m:
+	# obj is a MatchObject instance
+	print obj.group()
+
+
