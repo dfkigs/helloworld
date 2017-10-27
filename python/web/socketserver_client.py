@@ -1,26 +1,21 @@
 #!/usr/bin/python
+
 from socket import *
-from time import ctime
 
 HOST = 'localhost'
-#HOST = '::1'
 PORT = 21567
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 
-tcpCliSock = socket(AF_INET, SOCK_STREAM)
-#tcpCliSock = socket(AF_INET6, SOCK_STREAM)
-tcpCliSock.connect(ADDR)
-
 while True:
+	tcpCliSock = socket(AF_INET, SOCK_STREAM)
+	tcpCliSock.connect(ADDR)
 	data = raw_input('> ')
 	if not data:
 		break
-	
-	tcpCliSock.send(data)
+	tcpCliSock.send('%s\r\n' % data)
 	data = tcpCliSock.recv(BUFSIZ)
 	if not data:
 		break
-	print data
-
-tcpCliSock.close()
+	print data.strip()
+	tcpCliSock.close()

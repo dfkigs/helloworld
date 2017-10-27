@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import re
 
-# 1)                         (?iLmsux)
+# 1) (?iLmsux)
 #  (?iLmsux)
 # a)  (?i), (?L) ...... match empty string
 # b)  the letters set the corresponding flags:
@@ -17,7 +17,6 @@ m = re.search('(?i)Total', 'total')
 if m:
 	print m.group()
 
-#m = re.search('(?m)line', 'one\nline two')  ==> None
 m = re.search('(?m)^line', 'one\nline two')
 if m:
 	print m.group()
@@ -31,7 +30,6 @@ if m:
 #m = re.search(r"""(?x)\d +  # the integral part
 #				\.    # the decimal point
 #				\d *  # some fractional digits""", '78.90')
-
 # basic
 m = re.search('\d+\.\d*', '78.90')
 if m:
@@ -50,9 +48,9 @@ if m:
 	print "with comment:", m.group()
 
 # 2)  (?: ...)
-#m = re.search(r'(?:a)b\1', 'aba')
+m = re.search(r'(?:a)b', 'abaa')
 # sre_constants.error: bogus escape: '\\1'
-m = re.search(r'(a)b\1', 'aba')
+#m = re.search(r'(a)b\1', 'aba')
 if m:
 	print m.group()
 
